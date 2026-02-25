@@ -1,2 +1,2 @@
 # visualcomputing
-Repository destined to all type of content related with Visual Computign 2026-1 class
+Repository destined to all type of content related with Visual Computing 2026-1 class
