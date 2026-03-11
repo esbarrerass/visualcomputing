@@ -2,7 +2,7 @@
 
 **Nombre del estudiante:** Esteban Barrera Sanabria
 
-**Fecha de entrega:** 10 de Marzo de 2026
+**Fecha de entrega:** 21 de febrero de 2026
 
 ---
 
@@ -75,6 +75,10 @@ Se implementó con Three.js directamente en React via useRef/useEffect, logrando
 ![Unity captura 1](media/unity1.png)
 
 *Escena Unity con jerarquía padre → hijo → nieto y panel de UI*
+
+![Unity captura 2](media/unity2.png)
+
+*Jerarquia mostrada efectivamente en 'Hierarchy' de Unity UI*
 
 ![Unity GIF](media/unity1.gif)
 
