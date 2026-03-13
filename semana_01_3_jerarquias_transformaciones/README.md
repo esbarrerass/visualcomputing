@@ -26,7 +26,7 @@ En escencia, se busca comprender cómo las transformaciones afectan a los nodos 
 **Herramientas utilizadas:**
 
 - Three.js
-- React (`useRef`, `useEffect`)
+- React
 - dat.GUI
 - Vite
 
@@ -69,6 +69,7 @@ Se implementó con Three.js directamente en React via useRef/useEffect, logrando
 *Animación mostrando la herencia de transformaciones en tiempo real*
 
 ![Three.js GIF](media/threejs1.png)
+
 *Visualización de los controles dinamicos de rotación y traslación*
 
 ---
@@ -79,6 +80,7 @@ Se implementó con Three.js directamente en React via useRef/useEffect, logrando
 *Escena Unity con jerarquía padre → hijo → nieto y panel de UI*
 
 ![Unity captura 2](media/unity2.png)
+
 *Jerarquia mostrada efectivamente en 'Hierarchy' de Unity UI*
 
 ![Unity GIF](media/unity1.gif)
@@ -139,8 +141,8 @@ void UpdateScale(float value) {
 
 Durante el desarrollo se utilizaron herramientas de IA generativa para:
 
-- Estructurar la jerarquía de grupos en Three.js y posicionar correctamente los objetos hijos.
-- Resolver dudas sobre cómo conectar los sliders de Unity UI a las transformaciones del padre en C#.
+1. Estructurar la jerarquía de grupos en Three.js y posicionar correctamente los objetos hijos.
+2. Resolver dudas sobre cómo conectar los sliders de Unity UI a las transformaciones del padre en C#.
 
 Los prompts se enfocaron principalmente en corrección de errores y orientación sobre la API de Three.js y Unity.
 

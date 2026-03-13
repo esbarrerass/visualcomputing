@@ -57,13 +57,13 @@ El objetivo del taller se centra en comparar y convertir entre distintos formato
 
 Los archivos de video están en la carpeta `media/`, demostrando los tres modelos por ambos entornos, aqui una muestra de llos en imagenes derivadas de los videos
 
-- ![Python captura 1](media/python_gltf.png)
-- ![Python captura 2](media/python_stl.png)
+![Python captura 1](media/python_gltf.png)
+![Python captura 2](media/python_stl.png)
 
 Es posible divisar que el modelo `.gltf` se puede ver con los colores respectivos, pero en los tros modelos no es asi. Son los modelos antes de la conversión, por lo que es importante que se tenga en cuenta cuales imagenes son para compararlos con los modelos ya convertidos mostrados en el Threejs.
 
-- ![Three.js captura 1](media/threejs_obj.png)
-- ![Three.js captura 2](media/threejs_stl.png)
+![Three.js captura 1](media/threejs_obj.png)
+![Three.js captura 2](media/threejs_stl.png)
 
 Son los modelos ya convertidos, se puede ver que el unico que conserva (o recupera) su color es nuevamente el `.gltf`.
 
@@ -94,8 +94,8 @@ Se emplea para mostrar conteo de vértices/caras en React (fragmento de `App.jsx
 
 Durante el desarrollo se utilizaron herramientas de IA generativa para:
 
-- Resolver errores de tipado en TypeScript.
-- Manejar conversión de `Scene` a `Trimesh`.
+1. Resolver errores de tipado en TypeScript.
+2. Manejar conversión de `Scene` a `Trimesh`.
 
 Los prompts se enfocaron esencialmente en corrección de errores de versiones específicos.
 

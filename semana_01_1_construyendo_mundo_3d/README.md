@@ -14,8 +14,8 @@ Se desarrollaron implementaciones en dos entornos, ThreeJS y Python, cargando mo
 
 Se trabajó con:
 
-- Three.js (Vite + React Three Fiber)
-- Python (Jupyter Notebook) usando trimesh y vedo
+1. Three.js (Vite + React Three Fiber)
+2. Python (Jupyter Notebook) usando trimesh y vedo
 
 ---
 
@@ -70,13 +70,15 @@ Se trabajó con:
 
 ### Three.js
 
-- ![`threejs_edges.png`](media/threejs_edges.png)
-- ![`threejs_wireframe.png`](media/threejs_wireframe.png)
+![`threejs_edges.png`](media/threejs_edges.png)
+
+![`threejs_wireframe.png`](media/threejs_wireframe.png)
 
 ### Python
 
-- [`python_cat.png`](media/python_cat.png)
-- ![`python_rat.png`](media/python_rat.png)
+[`python_cat.png`](media/python_cat.png)
+
+![`python_rat.png`](media/python_rat.png)
 
 Cada captura muestra claramente la diferenciación entre vértices, aristas y caras.
 
@@ -116,8 +118,8 @@ if (geometry.index) {
 
 Durante el desarrollo se utilizaron herramientas de IA generativa para:
 
-- Resolver errores de tipado en TypeScript.
-- Manejar conversión de `Scene` a `Trimesh`.
+1. Resolver errores de tipado en TypeScript.
+2. Manejar conversión de `Scene` a `Trimesh`.
 
 Los prompts se enfocaron esencialmente en corrección de errores de versiones específicos.
 
