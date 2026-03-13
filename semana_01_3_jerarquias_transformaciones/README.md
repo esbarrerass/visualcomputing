@@ -141,7 +141,7 @@ void UpdateScale(float value) {
 
 Durante el desarrollo se utilizaron herramientas de IA generativa para:
 
-1. Estructurar la jerarquía de grupos en Three.js y posicionar correctamente los objetos hijos.
+1. Posicionar correctamente los objetos hijos para que se vieran en la camara en Three.JS.
 2. Resolver dudas sobre cómo conectar los sliders de Unity UI a las transformaciones del padre en C#.
 
 Los prompts se enfocaron principalmente en corrección de errores y orientación sobre la API de Three.js y Unity.

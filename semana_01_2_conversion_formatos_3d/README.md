@@ -36,12 +36,14 @@ El objetivo del taller se centra en comparar y convertir entre distintos formato
 
 ---
 
-## 2) Three.js con React Three Fiber
+## 2) Three.js (Vite + React Three Fiber)
 
 **Herramientas utilizadas:**
 
 - Three.js
-- React Three Fiber/Drei
+- React Three Fiber (`@react-three/fiber`)
+- Drei (`@react-three/drei`)
+- Vite
 
 **Funcionalidades implementadas:**
 

@@ -26,9 +26,8 @@ Se trabajó con:
 **Herramientas utilizadas:**
 
 - Three.js
-- React
-- @react-three/fiber
-- @react-three/drei
+- React Three Fiber (`@react-three/fiber`)
+- Drei (`@react-three/drei`)
 - Vite
 
 **Funcionalidades implementadas:**
