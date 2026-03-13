@@ -116,5 +116,3 @@ Los prompts se enfocaron esencialmente en corrección de errores de versiones es
 - Error de entorno en Python cuando faltaban dependencias (`scipy`) usadas por `trimesh`.
 - Algunos loaders devuelven `Scene` o `Group` en lugar de `Mesh`, por lo que hay que recorrer la jerarquía para sumar geometrías.
 - Modelos muy grandes (millones de vértices) pueden producir archivos de gran tamaño y tardar en renderizar.
-
----

@@ -177,5 +177,3 @@ Durante el desarrollo se utilizaron herramientas de IA generativa para:
 
 - En Processing, restaurar correctamente la cámara 3D después de dibujar la UI 2D requirió usar `camera()` sin argumentos en lugar de pasar valores manuales, generando el mismo error varias veces.
 - Generar el GIF en memoria con `imageio` sin guardar frames intermedios requirió usar `io.BytesIO` como buffer temporal para cada frame.
-
----

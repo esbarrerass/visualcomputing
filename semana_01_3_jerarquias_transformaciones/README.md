@@ -161,5 +161,3 @@ Los prompts se enfocaron principalmente en corrección de errores y orientación
 
 - En Unity, al animar la rotación del padre en `Update()` y también controlarla con slider, fue necesario separar la lógica de animación del valor del slider para evitar conflictos.
 - Asegurarse de que `dat.GUI` se destruya correctamente en el cleanup de `useEffect` para evitar instancias duplicadas al recargar en modo desarrollo.
-
----

@@ -136,5 +136,3 @@ Los prompts se enfocaron esencialmente en corrección de errores de versiones es
 
 - Manejo de escenas GLTF que cargan como `Scene` en lugar de `Mesh`.
 - Ajuste de cámara y escala en visualización 3D.
-
----
