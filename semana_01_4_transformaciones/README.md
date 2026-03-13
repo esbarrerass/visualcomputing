@@ -1,4 +1,4 @@
-# Taller Jerarquías y Transformaciones: El Árbol del Movimiento
+# Taller Transformaciones Básicas
 
 **Nombre del estudiante:** Esteban Barrera Sanabria
 
@@ -8,126 +8,147 @@
 
 ## Descripción
 
-El objetivo del taller es aplicar estructuras jerárquicas y árboles de transformación para organizar escenas y simular movimiento relativo entre objetos. 
-En escencia, se busca comprender cómo las transformaciones afectan a los nodos hijos en una estructura padre-hijo y cómo visualizar estos efectos en tiempo real.
+El objetivo del taller es explorar los conceptos fundamentales de transformaciones geométricas (traslación, rotación y escala) en distintos entornos de programación visual. Se completaron las transformaciones con animaciones en en funcion del tiempo y tambien transformaciones estaticas.
 
 **Entornos utilizados:**
-- Three.js (Vite + React)
-- Unity (versión LTS)
+
+- Python (Jupyter Notebook)
+- Three.js (Vite + React Three Fiber)
+- Processing
 
 ---
 
 ## Implementaciones
 
-### 1) Three.js (Vite + React)
+### 1) Python (Jupyter Notebook)
 
 **Herramientas utilizadas:**
-- Three.js
-- React (`useRef`, `useEffect`)
-- dat.GUI
-- Vite
 
-Se implementó con Three.js directamente en React via useRef/useEffect, logrando el mismo resultado que React Three Fiber pero con la API imperativa de Three.js.
+- `numpy` — matrices de transformación homogéneas
+- `matplotlib` — visualización y generación de frames
+- `imageio` — exportación del GIF animado
 
 **Funcionalidades implementadas:**
-1. Crear una jerarquía de 3 niveles con `THREE.Group`: `solarSystem` → `earthOrbit` → `moonOrbit`.
-2. Aplicar transformaciones (rotación Y y traslación X) al nodo raíz `solarSystem` y observar cómo los hijos heredan el movimiento.
-3. Controlar rotación y traslación del padre en tiempo real con sliders de `dat.GUI`.
-4. Animación continua de órbitas: la Tierra orbita el Sol y la Luna orbita la Tierra.
-5. **BONUS:** tercer nivel de jerarquía (`moonOrbit` dentro de `earthOrbit`) que demuestra transformaciones encadenadas.
+
+1. Figura 2D base en forma de flecha/casa definida con puntos.
+2. Matrices de transformación homogéneas para traslación, rotación y escala implementadas desde cero con `numpy`.
+3. Comparativa estática de las 4 transformaciones (original, traslación, rotación, escala) y para el punto adicional, se muestra la matriz correspondiente en cada panel.
+4. Animación en función del tiempo `t ∈ [0,1)` generada con un bucle de 60 frames — cada frame aplica transformaciones interpoladas.
 
 ---
 
-### 2) Unity (versión LTS)
+### 2) Three.js con React Three Fiber (Vite Project)
 
 **Herramientas utilizadas:**
-- Unity (LTS)
-- C#
+
+- Three.js
+- React Three Fiber (`@react-three/fiber`)
+- Drei (`@react-three/drei`)
+- Vite
 
 **Funcionalidades implementadas:**
-1. Escena con al menos 3 objetos anidados jerárquicamente: padre → hijo → nieto.
-2. Script `ParentController.cs` que controla posición, rotación y escala del nodo padre mediante sliders de UI, esto quiere deicr que los objetos hijos heredan automáticamente todas las transformaciones del padre.
-3. Visualización en tiempo real de posición, rotación y escala actuales en un Text de UI.
-4. **BONUS:** animación automática de rotación del padre con botón para pausar/reanudar (`ToggleAnimation`) y botón de reset (`ResetTransform`).
+
+1. Cubo 3D naranja acompañado de esfera azul (desfasada) con traslación por trayectoria circular (`sin`/`cos`), rotación continua en X e Y, y escala oscilante con `Math.sin(clock.elapsedTime)`.
+2. Todas las animaciones implementadas con `useFrame`.
+3. Grid de referencia para percibir el movimiento en el espacio.
+4. **BONUS:** `OrbitControls` para navegar la escena libremente.
+
+---
+
+### 3) Processing (3D)
+
+**Herramientas utilizadas:**
+
+- Processing IDE
+
+**Funcionalidades implementadas:**
+
+1. Sketch 3D con 3 objetos: cubo naranja (principal), esfera azul (orbita el cubo) y cubo verde pequeño de referencia en el origen.
+2. Transformaciones con `translate()`, `rotate()`, `scale()` animadas con `sin()`.
+3. `pushMatrix()` / `popMatrix()` para aislar cada objeto con su propio contexto de transformación.
+4. `frameCount` y `millis()` usados explícitamente para la animación temporal.
 
 ---
 
 ## Resultados Visuales
 
-### Three.js
+### Python
 
-![Three.js captura 1](media/threejs1.gif)
+![Python estática](media/pyhton_bonus.png)
+*Comparativa estática de las 4 transformaciones con matrices mostradas*
 
-*Vista general del sistema solar con jerarquía padre-hijo-nieto*
-
-![Three.js GIF](media/threejs2.gif)
-
-*Animación mostrando la herencia de transformaciones en tiempo real*
-
-![Three.js GIF](media/threejs1.png)
-
-*Visualización de los controles dinamicos de rotación y traslación*
+![Python GIF](media/pyhton_transformaciones.gif)
+*Animación de 60 frames mostrando traslación, rotación, escala y combinada en función de t*
 
 ---
 
-### Unity
+### Three.js
 
-![Unity captura 1](media/unity1.png)
+![Three.js captura](media/threejs.png)
+*Cubo y esfera con transformaciones activas y OrbitControls*
 
-*Escena Unity con jerarquía padre → hijo → nieto y panel de UI*
+![Three.js GIF](media/threejs.gif)
+*Animación mostrando trayectoria circular, rotación y escala oscilante*
 
-![Unity captura 2](media/unity2.png)
+---
 
-*Jerarquia mostrada efectivamente en 'Hierarchy' de Unity UI*
+### Processing
 
-![Unity GIF](media/unity1.gif)
+![Processing captura](media/processing.png)
+*Sketch 3D con los 3 objetos y UI de valores en tiempo real*
 
-*GIF mostrando el movimiento heredado y los sliders en acción*
+![Processing GIF](media/processing.gif)
+*Animación mostrando pushMatrix/popMatrix y transformaciones encadenadas*
 
 ---
 
 ## Código Relevante
 
-**Jerarquía de grupos en Three.js:**
-```javascript
-const solarSystem = new THREE.Group();
-const earthOrbit  = new THREE.Group();
-const moonOrbit   = new THREE.Group();
+**Matrices de transformación homogéneas en Python:**
 
-earth.position.x    = 12;
-moonOrbit.position.x = 12;
-moon.position.x      = 4;
+```python
+def mat_traslacion(tx, ty):
+    return np.array([[1, 0, tx],
+                     [0, 1, ty],
+                     [0, 0,  1]])
 
-solarSystem.add(sun);
-earthOrbit.add(earth);
-earthOrbit.add(moonOrbit);
-moonOrbit.add(moon);
-solarSystem.add(earthOrbit);
-scene.add(solarSystem);
+def mat_rotacion(angulo):
+    c, s = np.cos(angulo), np.sin(angulo)
+    return np.array([[c, -s, 0],
+                     [s,  c, 0],
+                     [0,  0, 1]])
+
+def mat_escala(sx, sy):
+    return np.array([[sx,  0, 0],
+                     [ 0, sy, 0],
+                     [ 0,  0, 1]])
+
+M = mat_traslacion(tx, ty) @ mat_rotacion(angulo) @ mat_escala(sx, sy)
 ```
 
-**Control del padre con dat.GUI (Three.js):**
-```javascript
-const params = { rotationY: 0, positionX: 0 };
-gui.add(params, 'rotationY', -Math.PI, Math.PI, 0.01)
-   .name('Rotación Y')
-   .onChange(v => { solarSystem.rotation.y = v; });
-gui.add(params, 'positionX', -10, 10, 0.1)
-   .name('Traslación X')
-   .onChange(v => { solarSystem.position.x = v; });
+**Animación con useFrame en R3F:**
+
+```jsx
+useFrame(({ clock }) => {
+  const t = clock.elapsedTime
+  mesh.current.position.x = Math.sin(t) * 2
+  mesh.current.position.z = Math.cos(t) * 2
+  mesh.current.rotation.y += 0.02
+  const s = 1 + 0.4 * Math.sin(t * 2)
+  mesh.current.scale.set(s, s, s)
+})
 ```
 
-**Transformaciones con sliders en Unity (C#):**
-```csharp
-void UpdatePosition(float value) {
-    parentObject.position = new Vector3(value, 0, 0);
-}
-void UpdateRotation(float value) {
-    parentObject.rotation = Quaternion.Euler(0, value, 0);
-}
-void UpdateScale(float value) {
-    parentObject.localScale = Vector3.one * value;
-}
+**pushMatrix / popMatrix en Processing:**
+
+```java
+pushMatrix();
+  translate(sin(t * 0.8) * 180, cos(t * 0.6) * 80, 0);
+  rotateX(t * 0.7);
+  rotateY(t * 1.1);
+  scale(1.0 + 0.4 * sin(t * 2.0));
+  box(80);
+popMatrix();
 ```
 
 ---
@@ -136,23 +157,23 @@ void UpdateScale(float value) {
 
 Durante el desarrollo se utilizaron herramientas de IA generativa para:
 
-- Estructurar la jerarquía de grupos en Three.js y posicionar correctamente los objetos hijos.
-- Resolver dudas sobre cómo conectar los sliders de Unity UI a las transformaciones del padre en C#.
-
-Los prompts se enfocaron principalmente en corrección de errores y orientación sobre la API de Three.js y Unity.
+1. Estructurar las matrices de transformación homogéneas en numpy.
+2. Resolver el manejo de la cámara 3D en Processing.
+3. Orientación sobre el uso de `clock.elapsedTime` en R3F para animaciones.
 
 ---
 
 ## Aprendizajes y Dificultades
 
 ### Aprendizajes
-- Las transformaciones aplicadas a un nodo padre se propagan automáticamente a todos sus hijos, lo que permite organizar escenas complejas de forma modular.
-- En Three.js, `THREE.Group` es equivalente a un nodo vacío que solo lleva transformaciones; permite anidar objetos sin necesidad de una geometría propia.
-- En Unity, la jerarquía del panel *Hierarchy* refleja directamente el árbol de transformaciones; mover el padre en código o en escena afecta a todos los descendientes.
-- El uso de `dat.GUI` / UI Sliders permite iterar rápidamente sobre valores de transformación sin recompilar.
+
+- En React Three Fiber, `useFrame` con `clock.elapsedTime` es la forma de animar en función del tiempo, evitando el uso de `requestAnimationFrame` manual.
+- En Processing, `pushMatrix()` y `popMatrix()` son equivalentes a guardar y restaurar el estado del sistema de coordenadas, lo que permite que cada objeto tenga su propia jerarquía de transformaciones sin afectar a los demás.
+- Al combinar UI 2D con una escena 3D en Processing es necesario resetear la cámara con `camera()` y usar `hint(DISABLE_DEPTH_TEST)` para que el texto siempre se dibuje encima.
 
 ### Dificultades
-- En Unity, al animar la rotación del padre en `Update()` y también controlarla con slider, fue necesario separar la lógica de animación del valor del slider para evitar conflictos.
-- Asegurarse de que `dat.GUI` se destruya correctamente en el cleanup de `useEffect` para evitar instancias duplicadas al recargar en modo desarrollo.
+
+- En Processing, restaurar correctamente la cámara 3D después de dibujar la UI 2D requirió usar `camera()` sin argumentos en lugar de pasar valores manuales, generando el mismo error varias veces.
+- Generar el GIF en memoria con `imageio` sin guardar frames intermedios requirió usar `io.BytesIO` como buffer temporal para cada frame.
 
 ---
