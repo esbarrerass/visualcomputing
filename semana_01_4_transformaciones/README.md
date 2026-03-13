@@ -74,10 +74,10 @@ El objetivo del taller es explorar los conceptos fundamentales de transformacion
 
 ### Python
 
-![Python estática](media/pyhton_bonus.png)
+![Python estática](media/python_bonus.png)
 *Comparativa estática de las 4 transformaciones con matrices mostradas*
 
-![Python GIF](media/pyhton_transformaciones.gif)
+![Python GIF](media/python_transformaciones.gif)
 *Animación de 60 frames mostrando traslación, rotación, escala y combinada en función de t*
 
 ---
@@ -95,9 +95,11 @@ El objetivo del taller es explorar los conceptos fundamentales de transformacion
 ### Processing
 
 ![Processing captura](media/processing.png)
+
 *Sketch 3D con los 3 objetos y UI de valores en tiempo real*
 
 ![Processing GIF](media/processing.gif)
+
 *Animación mostrando pushMatrix/popMatrix y transformaciones encadenadas*
 
 ---
