@@ -128,11 +128,9 @@ Y para Three.js, se evidencian las evidencias graficas de las camaras respectiva
 
 ![captura1](./media/threejs_camera1.png)
 
---
-
 ![captura2](./media/threejs_camera2.png)
 
---
+---
 
 ![gif](./media/threejs_cameras.gif)
 
